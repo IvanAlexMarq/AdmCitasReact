@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from 'react';
+import uuid from 'uuid/dist/v4'; //instalamos esta libreria externa con npm i uuid
 
 const Formulario = () => {
     //Crear State de Citas
@@ -33,8 +34,11 @@ const Formulario = () => {
             actualizarError(true);
             return;
         }
+        //Eliminar el mensaje error previo
+        actualizarError(false);
         //Asignar un ID
-
+        cita.id = uuid();//metodo que genera una id  diferente cada vez
+        console.log(cita);
         //Crear la cita
 
         //Reiniciar el form
