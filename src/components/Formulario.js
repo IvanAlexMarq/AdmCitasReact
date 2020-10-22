@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import uuid from 'uuid/dist/v4'; //instalamos esta libreria externa con npm i uuid
 
-const Formulario = () => {
+const Formulario = ({ crearCita }) => {
     //Crear State de Citas
     const [cita, actualizarCita] = useState({
         mascota: '',
@@ -38,9 +38,8 @@ const Formulario = () => {
         actualizarError(false);
         //Asignar un ID
         cita.id = uuid();//metodo que genera una id  diferente cada vez
-        console.log(cita);
         //Crear la cita
-
+        crearCita(cita);
         //Reiniciar el form
 
     };
