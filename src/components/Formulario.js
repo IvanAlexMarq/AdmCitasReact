@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import uuid from 'uuid/dist/v4'; //instalamos esta libreria externa con npm i uuid
+import PropTypes from 'prop-types'; //documenta los componentes
 
 const Formulario = ({ crearCita }) => {
     //Crear State de Citas
@@ -108,5 +109,7 @@ const Formulario = ({ crearCita }) => {
         </Fragment >
     );
 }
-
+Formulario.propTypes = {
+    crearCita: PropTypes.func.isRequired //lista los props que le estan pasando desde app
+}
 export default Formulario;
