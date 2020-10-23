@@ -12,8 +12,13 @@ function App() {
     /* console.log(cita); */
     //le paso al estate citas la cita/s del formulario
     guardarCitas([...citas, cita]);
-
   }
+
+  //funcion que elimina una cita por su id
+  const eliminarCita = (id) => {
+    const nuevasCitas = citas.filter(cita => cita.id !== id);
+    guardarCitas(nuevasCitas);
+  };
   return (
     <Fragment>
       <h1>Administrador de Pacientes</h1>
@@ -30,6 +35,7 @@ function App() {
               <Cita
                 key={cita.id}
                 cita={cita}
+                eliminarCita={eliminarCita}
               />
             ))}
           </div>
